@@ -1,34 +1,33 @@
 package org.example;
 
 public class Location {
-    private int xPosition;
-    private int yPosition;
+    int x;
+    int y;
 
-    Plant plants;
-    Herbivore herbivore;
+    Object[][] location = new Object[x][y];
 
-
-    public void Location(int x, int y) {
-        this.xPosition = x;
-        this.yPosition = y;
+    public Location( Object obj){
     }
 
-
-    public int getPositionX() {
-        return xPosition;
-    }
-
-    public int getPositionY() {
-        return yPosition;
-    }
-
-    public void Loc(){
-        String[][] arr = new String[xPosition][yPosition];
-
-        arr[xPosition][0] = plants.toString();
-        arr[0][yPosition] = herbivore.toString();
-
+    public void setLocation(Herbivore herbivore, Carnivore carnivore) {
+        location[1][y]= new Location(herbivore);
+        location[x][1]= new Location(carnivore);
 
     }
 
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public int getY() {
+        return y;
+    }
 }
