@@ -1,13 +1,12 @@
 package org.example;
 
 public class Herbivore extends Animal {
+    Plant plant;
 
     @Override
-    public void eat() {
-        System.out.println("I eat plants...");
-    }
-    public static void eatPlant(Plant plant){
-        System.out.println("I eat another plant...");
-
+    public boolean eat(Object obj) {
+       Herbivore herbivore = (Herbivore) obj;
+        System.out.println("Herbivore eats plants....");
+        return herbivore.eat(plant);
     }
 }

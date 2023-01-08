@@ -1,16 +1,14 @@
 package org.example;
-
-import java.util.Arrays;
-
 public class EntryPoint {
     static Location location[][];
-    static Herbivore herbivore;
-    static Plant plant;
+ static Herbivore herbivore;
+ static Carnivore carnivore;
+ static Plant plant;
     public static void main(String[] args) {
 
-        Carnivore.eatAnimal(herbivore);
 
-        Herbivore.eatPlant(plant);
+        System.out.println(herbivore.eat(plant));
+        System.out.println(carnivore.eat(herbivore));
 
     }
 }
